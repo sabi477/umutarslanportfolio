@@ -39,7 +39,7 @@ export function Features() {
 
   return (
     <section className="py-8 md:py-12" id="features">
-      <div className="mx-auto max-w-5xl space-y-8 px-6 md:space-y-10">
+      <div className="mx-auto max-w-5xl space-y-8 px-4 md:space-y-10 md:px-6">
         <div className="relative z-10 mx-auto max-w-xl space-y-6 text-center">
           <div>
             <p className="text-sm text-muted-foreground">{subtitle}</p>

@@ -28,7 +28,7 @@ export function Casestudy5({
   const items = casestudies ?? siteData.casestudies.items;
   return (
     <section className="py-10 md:py-14" id="casestudies">
-      <div className="container mx-auto max-w-5xl px-6">
+      <div className="container mx-auto max-w-5xl px-4 md:px-6">
         <div className="mb-8 text-center">
           <p className="text-base text-muted-foreground">Referans çalışmalar</p>
           <h2 className="mt-2 text-3xl font-semibold text-foreground md:text-4xl">
@@ -38,7 +38,7 @@ export function Casestudy5({
         <div className="overflow-hidden rounded-[15px] border border-border">
           <motion.a
             href={featured.link || "#"}
-            className="group grid gap-3 overflow-hidden px-6 transition-colors duration-500 ease-out hover:bg-muted/40 lg:grid-cols-2 xl:px-10"
+            className="group grid min-w-0 grid-cols-1 gap-3 overflow-hidden px-4 transition-colors duration-500 ease-out hover:bg-muted/40 md:px-6 lg:grid-cols-2 xl:px-10"
             initial={{ opacity: 0, y: 24 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.2 }}
@@ -70,13 +70,13 @@ src={featured.logo}
                 </div>
               </div>
             </div>
-            <div className="relative isolate py-10">
-              <div className="relative isolate h-full border border-border bg-background p-2">
-                <div className="h-full overflow-hidden">
+            <div className="relative isolate min-h-[200px] py-6 md:py-10">
+              <div className="relative isolate h-full min-h-[200px] border border-border bg-background p-2">
+                <div className="h-full min-h-[180px] overflow-hidden">
                   <img
                     src={featured.image}
                     alt={featured.title}
-                    className="aspect-[14/9] h-full w-full object-cover transition-transform duration-500 ease-out group-hover:scale-105"
+                    className="aspect-[14/9] h-full min-h-[180px] w-full object-cover transition-transform duration-500 ease-out group-hover:scale-105"
                   />
                 </div>
               </div>
@@ -89,7 +89,7 @@ src={featured.logo}
                 <motion.a
                   key={item.company}
                   href={item.link || "#"}
-                  className={`group flex flex-col justify-between gap-6 border-border bg-background px-6 py-6 transition-colors duration-500 ease-out hover:bg-muted/40 md:py-10 lg:pb-10 xl:gap-8 ${
+                  className={`group flex min-w-0 flex-col justify-between gap-6 border-border bg-background px-4 py-6 transition-colors duration-500 ease-out hover:bg-muted/40 md:px-6 md:py-10 lg:pb-10 xl:gap-8 ${
                     idx === 0
                       ? "xl:border-l xl:pl-8"
                       : "border-t lg:border-t-0 lg:border-l xl:border-r xl:pl-8"

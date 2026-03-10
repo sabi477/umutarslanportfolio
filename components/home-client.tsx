@@ -24,7 +24,7 @@ const RadialTimelineSection = dynamic(
 
 export function HomeClient() {
   return (
-    <div className="flex w-full flex-col">
+    <div className="flex min-w-0 w-full flex-col overflow-x-hidden">
       <Header />
       <main className="flex grow flex-col gap-8 pt-[30px] md:gap-12">
         <HeroSection />

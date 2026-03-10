@@ -89,9 +89,9 @@ export function CarouselCard({
   }
 
   return (
-    <div className="w-full px-4">
+    <div className="min-w-0 w-full px-2 md:px-4">
       <div
-        className={`relative ${isSingleCard ? "mx-auto max-w-sm" : "w-full"}`}
+        className={`relative overflow-hidden ${isSingleCard ? "mx-auto max-w-sm" : "w-full"}`}
       >
         {showCarousel && data.length > cardsPerView && (
           <>
@@ -135,12 +135,12 @@ export function CarouselCard({
                 }}
                 className="px-2"
               >
-                <div className="group relative h-full overflow-hidden rounded-lg border border-border shadow-md">
-                  <div className="h-48 w-full md:h-56">
+                <div className="group relative h-full min-h-0 overflow-hidden rounded-lg border border-border shadow-md">
+                  <div className="h-48 min-h-[12rem] w-full md:h-56">
                     <img
                       src={card.imgUrl}
                       alt=""
-                      className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
+                      className="h-full min-h-[12rem] w-full object-cover object-center transition-transform duration-300 group-hover:scale-105"
                     />
                   </div>
                   <div className="absolute inset-0 translate-y-full overflow-y-auto bg-black/85 p-4 text-white transition-transform duration-300 group-hover:translate-y-0">

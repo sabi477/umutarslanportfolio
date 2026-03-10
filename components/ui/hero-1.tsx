@@ -33,7 +33,7 @@ export function HeroSection() {
 
       {/* main content */}
 
-      <div className="relative flex flex-col items-center justify-center gap-4 py-14 md:py-16">
+      <div className="relative flex min-w-0 flex-col items-center justify-center gap-4 px-4 py-14 md:py-16">
         {/* X Content Faded Borders */}
         <div
           aria-hidden="true"
@@ -61,14 +61,14 @@ export function HeroSection() {
 
         <h1
           className={cn(
-            "fade-in slide-in-from-bottom-10 animate-in text-balance fill-mode-backwards text-center text-5xl font-semibold tracking-tight delay-100 duration-500 ease-out md:text-6xl lg:text-7xl",
+            "fade-in slide-in-from-bottom-10 animate-in text-balance fill-mode-backwards text-center font-semibold tracking-tight delay-100 duration-500 ease-out leading-tight text-[2rem] sm:text-[2.5rem] md:text-[3.5rem] lg:text-[4.5rem] xl:text-[5.5rem] 2xl:text-[6.5rem]",
             "text-shadow-[0_0px_50px_var(--color-foreground)/0.2]",
           )}
         >
           Building Teams Help <br /> You Scale and Lead
         </h1>
 
-        <p className="fade-in slide-in-from-bottom-10 mx-auto max-w-md animate-in fill-mode-backwards text-center text-base text-foreground/80 tracking-wide delay-200 duration-500 ease-out sm:text-lg md:text-xl">
+        <p className="fade-in slide-in-from-bottom-10 mx-auto max-w-3xl animate-in fill-mode-backwards text-center text-foreground/80 tracking-wide delay-200 duration-500 ease-out text-[1rem] sm:text-[1.25rem] md:text-[1.75rem] lg:text-[2.25rem] xl:text-[2.75rem] 2xl:text-[3.25rem]">
           Connecting you with world-class talent <br /> to scale, innovate and
           lead
         </p>
