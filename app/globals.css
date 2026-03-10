@@ -1,26 +1,144 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Tek siyah ton - tüm bileşenlerde aynı */
+  --black: #0a0a0a;
+  --background: #0a0a0a;
+  --foreground: #ededed;
+  --card: #0a0a0a;
+  --card-foreground: #ededed;
+  --popover: #0a0a0a;
+  --popover-foreground: #ededed;
+  --primary: #fafafa;
+  --primary-foreground: #0a0a0a;
+  --secondary: #0a0a0a;
+  --secondary-foreground: #fafafa;
+  --muted: #0a0a0a;
+  --muted-foreground: #a3a3a3;
+  --accent: #0a0a0a;
+  --accent-foreground: #fafafa;
+  --destructive: #7f1d1d;
+  --destructive-foreground: #fafafa;
+  --border: #171717;
+  --input: #0a0a0a;
+  --ring: #d4d4d4;
+  --radius: 15px;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans), system-ui, sans-serif;
+  font-size: 15px;
+  line-height: 1.5;
+  letter-spacing: -0.01em;
+  /* Double-tap zoom engelleme (iOS dahil) */
+  touch-action: manipulation;
+}
+
+/* Tipografi - varsayılan başlık stilleri */
+h1 { font-size: 1.5rem; font-weight: 600; }
+h2 { font-size: 1.25rem; font-weight: 600; }
+h3 { font-size: 15px; font-weight: 500; }
+
+/* Animation utilities for hero component */
+@keyframes enter {
+  from {
+    opacity: var(--tw-enter-opacity, 1);
+    transform: translate3d(var(--tw-enter-translate-x, 0), var(--tw-enter-translate-y, 0), 0)
+      scale3d(var(--tw-enter-scale, 1), var(--tw-enter-scale, 1), var(--tw-enter-scale, 1))
+      rotate(var(--tw-enter-rotate, 0));
+  }
+}
+
+@keyframes zoom-in-97 {
+  from {
+    opacity: 0;
+    transform: scale(0.97);
+  }
+}
+
+.animate-in {
+  animation-name: enter;
+  animation-duration: 500ms;
+  animation-fill-mode: both;
+}
+
+.fade-in {
+  --tw-enter-opacity: 0;
+}
+
+.slide-in-from-bottom-10 {
+  --tw-enter-translate-y: 2.5rem;
+}
+
+.fill-mode-backwards {
+  animation-fill-mode: backwards;
+}
+
+.data-\[slot\=open\]\:animate-in:is([data-slot="open"]) {
+  animation-name: enter;
+  animation-duration: 200ms;
+  animation-fill-mode: both;
+}
+
+.data-\[slot\=open\]\:zoom-in-97:is([data-slot="open"]) {
+  --tw-enter-scale: 0.97;
+}
+
+/* Hero CTA butonları - mor-mavi gradient hover (Book a Call + Get started) */
+.hero-cta-button {
+  transition: background 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+.hero-cta-button:hover {
+  background: linear-gradient(135deg, #7c3aed 0%, #3b82f6 50%, #6366f1 100%) !important;
+  color: white !important;
+  border-color: transparent !important;
+}
+.hero-cta-button:hover svg {
+  color: white !important;
+}
+
+/* Radial Orbital Timeline - özel animasyonlar */
+@keyframes ping {
+  75%, 100% {
+    transform: scale(2);
+    opacity: 0;
+  }
+}
+
+.animate-ping {
+  animation: ping 1s cubic-bezier(0, 0, 0.2, 1) infinite;
 }
